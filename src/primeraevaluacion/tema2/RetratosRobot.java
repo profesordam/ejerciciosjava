@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class RetratosRobot {
 	
 	public static void main(String[] args) throws IOException {
-		final String PELO1 = "WWWWWWWWW";
+		final String PELO01 = "WWWWWWWWW";
 		final String PELO2 = "\\\\\\//////";
 		final String PELO3 = "|\"\"\"\"\"\"\"|";
 		final String PELO4 = "|||||||||";
@@ -30,7 +30,7 @@ public class RetratosRobot {
 		System.out.println("Vamos a crear un retrato robot");
 		
 		System.out.println("Opciones para el pelo:");
-		System.out.printf("1. %s\n2. %s\n3. %s\n4. %s\nElige un número:", PELO1, PELO2, PELO3, PELO4);
+		System.out.printf("1. %s\n2. %s\n3. %s\n4. %s\nElige un número:", PELO01, PELO2, PELO3, PELO4);
 		int pelo = Integer.parseInt(in.readLine());
 		if (pelo < 1 || pelo > 4)
 			System.out.println("Opción incorrecta");
@@ -61,7 +61,7 @@ public class RetratosRobot {
 						else {
 							switch (pelo) {
 							case 1:
-								System.out.println(PELO1);
+								System.out.println(PELO01);
 								break;
 							case 2:
 								System.out.println(PELO2);
