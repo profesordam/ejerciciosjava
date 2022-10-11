@@ -10,8 +10,20 @@ public class Ejercicio14 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("DNI: ");
 		int dni = Integer.parseInt(in.readLine());
-		char letra = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(dni % 23);
+		System.out.println("Letra: ");
+		char letra = in.readLine().charAt(0);
+		if (validarDNI(dni, letra))
+			System.out.println("datos correctos");
+		else
+			System.out.println("datos incorrectos");
 		System.out.println("Letra: " + letra); 
+	}
+	
+	// Metodo validarDNI que reciba un número de DNI y una letra.
+	// Retorna true si la letra se corresponde con el número.
+	
+	static boolean validarDNI(int numero, char letra) {
+		return letra == "TRWAGMYFPDXBNJZSQVHLCKE".charAt(numero % 23);
 	}
 
 }

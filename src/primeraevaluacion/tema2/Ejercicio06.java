@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  * una circunferencia leyendo su radio por teclado. (π = 3.14159)
  */
 
-public class Ejercicio6 {
+public class Ejercicio06 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -18,10 +18,20 @@ public class Ejercicio6 {
 		double radio;
 		System.out.println("Introduce el radio: ");
 		radio = Double.parseDouble(in.readLine());
-		perimetro = 2 * Math.PI * radio;
-		area = Math.pow(radio, 2) * Math.PI;
+		perimetro = perimetroCircunferencia(radio);
+		area = areaCircunferencia(radio);
 		System.out.println("Perímetro: " + perimetro);
 		System.out.println("Área: " + area);
+	}
+	
+	static double perimetroCircunferencia(double radio) {
+		double perimetro = 2 * Math.PI * radio;
+		return perimetro;
+	}
+	
+	static double areaCircunferencia(double radio) {
+		double area = Math.pow(radio, 2) * Math.PI;
+		return area;
 	}
 
 }
