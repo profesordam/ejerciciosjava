@@ -3,37 +3,40 @@ package primeraevaluacion.tema2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Ejercicio26 {
 
+//	public static void main(String[] args) {
+//		int [] numeros = new int[10];
+//		Random r = new Random();
+//		for (int i=0; i<numeros.length; i++)
+//			numeros[i] = r.nextInt(100); 
+//		System.out.println(Arrays.toString(numeros));
+//		int [] numeros2 = new int[numeros.length];
+//		for (int i=0; i<numeros2.length; i++)
+//			numeros2[i] = numeros[numeros2.length -1 - i];
+//		System.out.println(Arrays.toString(numeros2));
+//	}
+	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		double x1 = leerCoordenada("x1: ", in);
-		double y1 = leerCoordenada("y1: ", in);
-		double x2 = leerCoordenada("x2: ", in);
-		double y2 = leerCoordenada("y2: ", in);
-		double d = distancia(x1, y1, x2, y2);
-		System.out.println("distancia: " + d);
-	}
-			
-	static double leerCoordenada(String msg, BufferedReader in)  {
-		boolean correcto;
-		double valor = 0;
-		System.out.print(msg);
-		do {
-			correcto = true; 
-			try {
-				valor = Double.parseDouble(in.readLine());
-			} catch (NumberFormatException | IOException e) {
-				System.out.println("número incorrecto, inténtalo de nuevo");
-				correcto = false;
-			}
-		} while (!correcto);
-		return valor;
+		System.out.println("Tamaño del array: ");
+		int [] numeros = new int[Integer.parseInt(in.readLine())];
+		int n = numeros.length;
+		Random r = new Random();
+		for (int i=0; i<n; i++)
+			numeros[i] = r.nextInt(100); 
+		System.out.println(Arrays.toString(numeros));
+		for (int i=0; i<n / 2; i++) {
+			int temp = numeros[i];
+			numeros[i] = numeros[n - 1 - i];
+			numeros[n - 1 - i] = temp;
+		}
+		System.out.println(Arrays.toString(numeros));
 	}
 	
-	static double distancia(double x1, double y1, double x2, double y2) {
-		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-	}
+	
 
 }
