@@ -16,7 +16,7 @@ public class Ejercicio13 {
 		System.out.println(Arrays.toString(sumaColumnas(m)));
 	}
 	
-	static int dim(int min, int max) {
+	public static int dim(int min, int max) {
 		return (int) (Math.random() * (max - min) + min);
 	}
 	
