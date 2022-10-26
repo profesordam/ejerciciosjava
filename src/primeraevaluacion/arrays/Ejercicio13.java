@@ -2,6 +2,21 @@ package primeraevaluacion.arrays;
 
 import java.util.Arrays;
 
+	/*
+	 * Programa que cree una matriz de números enteros aleatorios con un número de filas y de columnas
+	 * aleatorios que estén comprendidos entre 2 y 20.
+	 * 
+	 * Escribir un método que reciba una matriz de números enteros y retorne un vector que contenga la
+	 * suma de los valores de cada fila.
+	 * 
+	 * Escribir otro método que reciba una matriz de números enteros y retorne un vector que contenga la
+	 * suma de los valores de cada columna.
+	 * 
+	 * Mostrar en la consola la matriz, la suma de las filas a su derecha y la suma de las columnas en 
+	 * la parte inferior.
+	 * 
+	 */
+
 public class Ejercicio13 {
 
 	public static void main(String[] args) {

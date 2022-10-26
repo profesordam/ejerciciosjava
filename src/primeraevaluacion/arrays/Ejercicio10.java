@@ -8,13 +8,19 @@ public class Ejercicio10 {
 
 	/*
 	 * Programa que realice las tareas siguientes:
-	 * 	• Crear un vector de números enteros de un tamaño especificado por el usuario que esté
-	 *    comprendido entre 10 y 20 elementos.
-	 *  • Llenar el vector con números aleatorios.
-	 *  • Mostrar el contenido del vector.
-	 *  • Mostrar la mínima diferencia entre dos valores adyacentes. 
-	 *  La diferencia entre dos valores adyacentes se calcula como el valor almacenado en cada
-	 *   posición [i] (excepto la primera) menos el valor almacenado en la posición [i-1]
+	 * 
+	 * 	  • Crear un vector de números enteros de un tamaño especificado por el usuario que esté
+	 *      comprendido entre 10 y 20 elementos.
+	 *    
+	 *    • Llenar el vector con números aleatorios.
+	 *  
+	 *    • Mostrar el contenido del vector.
+	 *  
+	 *    • Mostrar la mínima diferencia entre dos valores adyacentes.
+	 *   
+	 * La diferencia entre dos valores adyacentes se calcula como el valor almacenado en cada
+	 * posición [i] (excepto la primera) menos el valor almacenado en la posición [i-1]
+	 * 
 	 */
 	
 	public static void main(String[] args) throws IOException {

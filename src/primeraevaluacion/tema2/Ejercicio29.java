@@ -14,5 +14,5 @@ public class Ejercicio29 {
 		for (int [] fila: matriz)
 			System.out.println(Arrays.toString(fila));
 	}
-
+	
 }
