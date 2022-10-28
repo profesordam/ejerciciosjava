@@ -2,6 +2,13 @@ package primeraevaluacion.arrays;
 
 import java.util.Arrays;
 
+/*
+ * Crear una clase llamada MétodosOrdenación que defina tres métodos estáticos para ordenar vectores
+ * de números enteros implementando la ordenación por inserción directa, por selección directa y por
+ * intercambio directo respectivamente.
+ * 
+ */
+
 public class MetodosOrdenación {
 
 	public static void main(String[] args) {
