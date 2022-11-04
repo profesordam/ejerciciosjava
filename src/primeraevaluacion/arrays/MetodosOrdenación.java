@@ -1,6 +1,7 @@
 package primeraevaluacion.arrays;
 
 import java.util.Arrays;
+import java.util.function.Consumer;
 
 /*
  * Crear una clase llamada MétodosOrdenación que defina tres métodos estáticos para ordenar vectores
@@ -12,44 +13,21 @@ import java.util.Arrays;
 public class MetodosOrdenación {
 
 	public static void main(String[] args) {
-		int [] v;
-		int [] aux;
-		long t0, t1;
-		
-		v = crearVector(1000);
+		int [] v = crearVector(1000);
 		System.out.println("Original");
 		System.out.println(Arrays.toString(v));
-		
-		aux = Arrays.copyOf(v, v.length);
-		t0 = System.nanoTime();
-		insercionDirecta(aux);
-		t1 = System.nanoTime();
-		System.out.println("Ordenado por Inserción Directa");
-		System.out.println(Arrays.toString(aux));
-		System.out.println("tiempo: " + (t1 - t0));
-		
-		aux = Arrays.copyOf(v, v.length);
-		t0 = System.nanoTime();
-		intercambioDirecto(aux);
-		t1 = System.nanoTime();
-		System.out.println("Ordenado por Intercambio Directo");
-		System.out.println(Arrays.toString(aux));
-		System.out.println("tiempo: " + (t1 - t0));
-		
-		aux = Arrays.copyOf(v, v.length);
-		t0 = System.nanoTime();
-		seleccionDirecta(aux);
-		t1 = System.nanoTime();
-		System.out.println("Ordenado por selección Directa");
-		System.out.println(Arrays.toString(aux));
-		System.out.println("tiempo: " + (t1 - t0));
-		
-		aux = Arrays.copyOf(v, v.length);
-		t0 = System.nanoTime();
-		Arrays.sort(aux);
-		t1 = System.nanoTime();
-		System.out.println("Ordenado por Arrays.sort");
-		System.out.println(Arrays.toString(aux));
+		ordenar(Arrays.copyOf(v, v.length), MetodosOrdenación::insercionDirecta, "Inserción Directa");
+		ordenar(Arrays.copyOf(v, v.length), MetodosOrdenación::intercambioDirecto, "Intercambio Directo");
+		ordenar(Arrays.copyOf(v, v.length), MetodosOrdenación::seleccionDirecta, "Selección Directa");
+		ordenar(Arrays.copyOf(v, v.length), Arrays::sort, "Arrays.sort");
+	}
+	
+	static void ordenar(int [] v, Consumer<int []> metodo, String nombre) {
+		long t0 = System.nanoTime();
+		metodo.accept(v);
+		long t1 = System.nanoTime();
+		System.out.println("Ordenado por " + nombre);
+		System.out.println(Arrays.toString(v));
 		System.out.println("tiempo: " + (t1 - t0));
 	}
 	
