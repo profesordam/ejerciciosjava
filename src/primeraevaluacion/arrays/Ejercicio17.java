@@ -23,7 +23,12 @@ public class Ejercicio17 {
 		int i1 = 0;
 		int i2 = 0;
 		for (int i=0; i<v3.length; i++) {
-			if (i1 == v1.length || (i2 < v2.length && v2[i2] <= v1[i1]))
+//			if (i1 == v1.length || (i2 < v2.length && v2[i2] <= v1[i1]))
+//				v3[i] = v2[i2++];
+//			else if (i2 == v2.length || (i1 < v1.length && v1[i1] < v2[i2]))
+//				v3[i] = v1[i1++];
+//			
+			if (!(i1 != v1.length && (i2 >= v2.length || v2[i2] > v1[i1])))
 				v3[i] = v2[i2++];
 			else if (i2 == v2.length || (i1 < v1.length && v1[i1] < v2[i2]))
 				v3[i] = v1[i1++];
