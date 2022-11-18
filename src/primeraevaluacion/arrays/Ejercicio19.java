@@ -6,6 +6,18 @@ import java.io.InputStreamReader;
 
 public class Ejercicio19 {
 
+/*
+4 6
+000001
+101100
+111110
+001100
+X
+1
+2
+
+*/
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String linea;
