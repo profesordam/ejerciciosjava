@@ -20,9 +20,7 @@ X
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		String linea;
-		linea = in.readLine();
-		String [] v = linea.split(" ");
+		String [] v = in.readLine().split(" ");
 		int filas = Integer.parseInt(v[0]);
 		int columnas = Integer.parseInt(v[1]);
 		char [][] m = new char[filas][columnas];
@@ -49,6 +47,20 @@ X
 	}
 	
 	static void rellenar(char [][] m, int f, int c, char r) {
+		char actual = m[f][c];
+		m[f][c] = r;
+		int faux = f - 1;
+		if (faux >= 0 && m[faux][c] == actual)
+			rellenar(m, faux, c, r);
+		faux = f + 1;
+		if (faux < m.length && m[faux][c] == actual)
+			rellenar(m, faux, c, r);
+		int caux = c - 1;
+		if (caux >= 0 && m[f][caux] == actual)
+			rellenar(m, f, caux, r);
+		caux = c + 1;
+		if (caux < m[f].length && m[f][caux] == actual)
+			rellenar(m, f, caux, r);
 		
 	}
 
