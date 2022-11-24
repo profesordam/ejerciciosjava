@@ -9,7 +9,7 @@ public class Ejercicio19 {
 /*
 4 6
 000001
-101100
+101110
 111110
 001100
 X
@@ -49,18 +49,14 @@ X
 	static void rellenar(char [][] m, int f, int c, char r) {
 		char actual = m[f][c];
 		m[f][c] = r;
-		int faux = f - 1;
-		if (faux >= 0 && m[faux][c] == actual)
-			rellenar(m, faux, c, r);
-		faux = f + 1;
-		if (faux < m.length && m[faux][c] == actual)
-			rellenar(m, faux, c, r);
-		int caux = c - 1;
-		if (caux >= 0 && m[f][caux] == actual)
-			rellenar(m, f, caux, r);
-		caux = c + 1;
-		if (caux < m[f].length && m[f][caux] == actual)
-			rellenar(m, f, caux, r);
+		if (--f >= 0 && m[f][c] == actual)
+			rellenar(m, f, c, r);
+		if ((f += 2) < m.length && m[f][c] == actual)
+			rellenar(m, f, c, r);
+		if (--c >= 0 && m[--f][c] == actual)
+			rellenar(m, f, c, r);
+		if ((c += 2) < m[f].length && m[f][c] == actual)
+			rellenar(m, f, c, r);
 		
 	}
 
