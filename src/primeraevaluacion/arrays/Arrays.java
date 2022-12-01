@@ -73,8 +73,17 @@ public class Arrays {
 	}
 	
 	public static int max3x3sum(int [][] matriz) {
-		
-		return 0;
+		int max = Integer.MIN_VALUE;
+		for (int i=0; i<matriz.length - 2; i++)
+			for (int j=0; j<matriz[i].length - 2; j++) {
+				int suma = 0;
+				for (int k=0; k<3; k++)
+					for(int l=0; l<3; l++)
+						suma += matriz[i + k][j + l];
+				if (suma > max)
+					max = suma;
+			}
+		return max;
 	}
 	
 	public static void mostrarMatriz(int [][] matriz) {
@@ -93,6 +102,13 @@ public class Arrays {
 		mostrarMatriz(cuadrada2(4));
 		System.out.println();
 		mostrarMatriz(palindromos(6, 4));
+		System.out.println();
+		int max = max3x3sum(new int[][]{
+						{1, 5, 5, 2, 4},
+						{2, 1, 4, 14, 3},
+						{3, 7, 11, 2, 8},
+						{4, 8, 12, 16, 4}});
+		System.out.println(max);
 	}
 	
 }
