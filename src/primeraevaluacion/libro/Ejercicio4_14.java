@@ -20,15 +20,15 @@ public class Ejercicio4_14 {
 				elegidos[i] = 0;
 			System.out.println("Partida iniciada");
 			for (int i=0; i<3; i++) {
-				System.out.println("Jugador A elige: ");
+				System.out.printf("Jugador A (%d) elige: ", sumaA);
 				sumaA += elegir('A');
 				if (i == 2 && sumaA == 15)
-					System.out.println("JUGADOR A GANA LA PARTIDA!");
+					System.out.println("JUGADOR A GANA LA PARTIDA!\n");
 				else {
-					System.out.println("Jugador B elige: ");
+					System.out.printf("Jugador B (%d) elige: ", sumaB);
 					sumaB += elegir('B');
 					if (i == 2 && sumaB == 15)
-						System.out.println("JUGADOR B GANA LA PARTIDA!");
+						System.out.println("JUGADOR B GANA LA PARTIDA!\n");
 				}
 			}
 			if (sumaA !=15 && sumaB != 15)
