@@ -11,7 +11,6 @@ public class Ejercicio1 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		Pattern regex = Pattern.compile("\\b[A-ZÁÉÍÓÚ][a-záéíóú]+(?: \\b[A-ZÁÉÍÓÚ][a-záéíóú]+)+\\b");
-//		Pattern regex = Pattern.compile("\\b([A-ZÁÉÍÓÚÜ][a-záéíóúü]+)(?: \\1)+\\b");
 		System.out.println("Nombres:");
 		Matcher m = regex.matcher(in.readLine());
 		while (m.find())
